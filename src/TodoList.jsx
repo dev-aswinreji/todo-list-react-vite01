@@ -40,6 +40,14 @@ function CreateTodo() {
 //         }
 //     }))
 //   }
+ let newTasks = []
+ let count = 0
+ for(let i = tasks.length -1; i>=0;i-- ){
+    newTasks[count] = tasks[i]
+    count++
+ }
+ console.log(tasks,'tasks is sowign');
+ console.log(newTasks,'newTasks is showing');
   return (
     <div className="todo-app">
       <header>
@@ -56,7 +64,7 @@ function CreateTodo() {
       </div>
       <main>
         <ol className="order-list">
-          {tasks.map((task) => (
+          {newTasks.map((task) => (
             <TodoLayout
               key={task.id}
               task={task}
