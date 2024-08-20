@@ -31,35 +31,41 @@ function CreateTodo() {
     setTasks(tasks.filter(item=>item.id !== id))
   }
 
-  function toggleCompleted(id){
-    setTasks(tasks.map(item=>{
-        if(item.id === id){
-            return {...tasks,completed: !item.completed}
-        }else {
-            return item
-        }
-    }))
-  }
-
+//   function toggleCompleted(id){
+//     setTasks(tasks.map(item=>{
+//         if(item.id === id){
+//             return {...tasks,completed: !item.completed}
+//         }else {
+//             return item
+//         }
+//     }))
+//   }
   return (
-    <>
-      <div>
+    <div className="todo-app">
+      <header>
         <h1>TODO APP</h1>
-        <input value={text} onChange={(e) => setText(e.target.value)} />
-        <button onClick={() => addTask(text)}> ADD</button>
-        <br />
+      </header>
+      <div className="input-container">
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Add a new task..."
+        />
+        <button onClick={() => addTask(text)}>ADD</button>
+      </div>
+      <main>
         <ol className="order-list">
-          {tasks.map((item) => (
+          {tasks.map((task) => (
             <TodoLayout
-                key={item.id}
-                task={item}
-                deleteTask={deleteTask}
-                toggleCompleted={toggleCompleted}
-             />
+              key={task.id}
+              task={task}
+              deleteTask={deleteTask}
+            />
           ))}
         </ol>
-      </div>
-    </>
+      </main>
+    </div>
   );
 }
 

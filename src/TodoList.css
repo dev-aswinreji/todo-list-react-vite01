@@ -1,48 +1,55 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000000;
+    background-color: #111;
+    color: #fff;
     margin: 0;
     padding: 0;
-    color: #fff; /* Set text color for readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Keyframes for Background Glow */
 @keyframes backgroundGlow {
     0% {
-        box-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+        box-shadow: 0 0 10px rgba(173, 216, 230, 0.4);
     }
     50% {
-        box-shadow: 0 0 20px rgba(173, 216, 230, 0.7);
+        box-shadow: 0 0 20px rgba(173, 216, 230, 0.6);
     }
     100% {
-        box-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+        box-shadow: 0 0 10px rgba(173, 216, 230, 0.4);
     }
 }
 
 /* Keyframes for Text Shadow Glow */
 @keyframes textGlow {
     0% {
-        text-shadow: 0 0 5px rgba(173, 216, 230, 0.8);
+        text-shadow: 0 0 5px rgba(173, 216, 230, 0.6);
     }
     50% {
-        text-shadow: 0 0 20px rgba(173, 216, 230, 0.9), 0 0 30px rgba(173, 216, 230, 0.6);
+        text-shadow: 0 0 20px rgba(173, 216, 230, 0.8), 0 0 30px rgba(173, 216, 230, 0.5);
     }
     100% {
-        text-shadow: 0 0 5px rgba(173, 216, 230, 0.8);
+        text-shadow: 0 0 5px rgba(173, 216, 230, 0.6);
     }
 }
 
 /* Styles for the h1 Tag */
 h1 {
     text-align: center;
-    font-weight: bolder;
-    font-size: 4rem;
-    color: lightblue;
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: #add8e6;
     border-radius: 4rem;
     animation: backgroundGlow 2s infinite alternate, textGlow 1.5s infinite alternate;
-    padding: 1rem;
-    margin: 2rem 0; /* Adjusted for better spacing */
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Neon Light Effect for Input */
@@ -60,42 +67,39 @@ h1 {
 
 input {
     border-radius: 1.5rem;
-    width: 100%; /* Full width within container */
-    max-width: 20rem; /* Limit width for readability */
-    height: 2.5rem;
-    padding: 0 1rem;
-    font-weight: bolder;
+    width: 100%;
+    max-width: 25rem;
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 2rem; /* Adjusted spacing */
-    border: 1px solid #ccc;
+    margin-top: 1.5rem;
+    border: 1px solid #444;
     box-shadow: 0 0 5px rgb(68, 184, 184);
     animation: neonGlow 1.5s infinite alternate;
+    background-color: #222;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
-/* Keyframes for Button Jump Effect */
-@keyframes jump {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+input:focus {
+    outline: none;
+    border-color: #68b8b8;
 }
 
 /* Button Styles */
 button {
     font-weight: bold;
-    background-color: #333;
+    background-color: #444;
     border: none;
     border-radius: 1.5rem;
-    width: 6rem;
+    width: 5rem;
     color: #fff;
-    height: 2.5rem;
+    height: 3rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 button:hover {
@@ -105,6 +109,19 @@ button:hover {
 button:active {
     animation: jump 0.3s ease;
     transform: scale(0.98);
+}
+
+/* Keyframes for Button Jump Effect */
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* Keyframes for Container Fade-In */
@@ -121,16 +138,16 @@ button:active {
 
 /* Order List Styles */
 .order-list {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
+    width: 80%;
+    max-width: 60rem;
     color: #543d6b;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 2rem auto;
-    max-width: 40rem;
     opacity: 0;
     animation: containerFadeIn 0.6s ease-out forwards;
+    margin-bottom: 2rem;
 }
 
 /* Keyframes for Fade-In Effect */
@@ -147,22 +164,64 @@ button:active {
 
 /* List Item Styles */
 li {
-    border: 2px solid #ddd;
     width: 100%;
+    border: 2px solid #ddd;
     border-radius: 1.5rem;
-    padding: 1rem;
-    margin: 0.5rem 0;
+    padding: 1rem 1.5rem;
+    margin: 0.7rem 0;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #f9f9f9;
+}
+
+/* Todo Item Styles */
+.todo-item {
+    border-radius: 1.5rem;
+    background-color: #eee;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
 }
 
+/* Text and Completion Styles */
+/* .todo-item p {
+    margin: 0;
+    color: #333;
+    flex: 1;
+}
+
+.todo-item p.completed {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.todo-item button {
+    background-color: #68b8b8;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.todo-item button:hover {
+    background-color: #50a2a2;
+} */
+
 /* Animation Delay */
-li:nth-child(1) {
+/* li:nth-child(1) {
     animation-delay: 0.1s;
 }
 li:nth-child(2) {
@@ -170,29 +229,4 @@ li:nth-child(2) {
 }
 li:nth-child(3) {
     animation-delay: 0.3s;
-}
-/* Add more delays for additional items */
-
-/* Todo Item Styles */
-.todo-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid #ddd;
-    border-radius: 1.5rem;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.todo-item p {
-    margin: 0;
-    flex: 1;
-    color: #000;
-}
-
-.todo-item p.completed {
-    color: #888;
-    text-decoration: line-through;
-}
+} */

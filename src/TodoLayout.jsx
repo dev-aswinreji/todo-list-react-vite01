@@ -4,12 +4,7 @@ export function TodoLayout({ task, deleteTask, toggleCompleted }) {
   }
   return (
     <li className="todo-item">
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => toggleCompleted(task.id)}
-      />
-      <p className={task.completed ? 'completed' : ''}>{task.text}</p>
+        <h1>{task.text}</h1>
       <button onClick={() => deleteTask(task.id)}>X</button>
     </li>
   );
