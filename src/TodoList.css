@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+/* Keyframes for background light effect */
+@keyframes backgroundGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Initial light glow */
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(173, 216, 230, 0.7); /* Brighter glow */
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Return to initial glow */
+    }
+}
+
+/* Keyframes for text shadow glow */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(173, 216, 230, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(173, 216, 230, 0.9), 0 0 30px rgba(173, 216, 230, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(173, 216, 230, 0.8);
+    }
+}
+
+/* Styles for the h1 tag */
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4rem;
+    color: lightblue;
+    border-radius: 4rem;
+    animation: backgroundGlow 2s infinite alternate, textGlow 1.5s infinite alternate; /* Apply both animations */
+    padding: 1rem; /* Padding for some space around the text */
+    margin: 2rem; /* Margin for spacing from other elements */
+}
+
+/* Neon Light Effect for Input */
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 5px rgb(112, 201, 189), 0 0 10px rgb(68,184,184), 0 0 15px rgb(68,184,184), 0 0 20px rgb(68,184,184);
+    }
+    50% {
+        box-shadow: 0 0 10px rgb(68,184,184), 0 0 20px rgb(68,184,184), 0 0 30px rgb(68,184,184), 0 0 40px rgb(68,184,184);
+    }
+    100% {
+        box-shadow: 0 0 5px rgb(68,184,184), 0 0 10px rgb(68,184,184), 0 0 15px rgb(68,184,184), 0 0 20px rgb(68,184,184);
+    }
+}
+
+input {
+    border-radius: 1.5rem;
+    width: 20rem;
+    height: 2.5rem;
+    padding: 0 1rem; /* Corrected padding syntax */
+    margin-left: 13rem;
+    margin-right: 5px;
+    font-weight: bolder;
+    font-size: 22px;
+    margin-top: 3rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgb(68, 184, 184); /* Initial neon glow effect */
+    animation: neonGlow 1.5s infinite alternate; /* Apply neon glow animation */
+}
+
+/* Keyframes for Button Jump Effect */
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Moves button up */
+    }
+    100% {
+        transform: translateY(0); /* Returns to original position */
+    }
+}
+
+/* Button Styles */
+button {
+    font-weight: bold;
+    background-color: #333;
+    border: none;
+    border-radius: 1.5rem;
+    width: 6rem;
+    color: #fff;
+    height: 2.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Button Hover and Active States */
+button:hover {
+    background-color: #555;
+}
+
+button:active {
+    animation: jump 0.3s ease; /* Apply jump animation on click */
+    transform: scale(0.98); /* Slightly scale down on click for feedback */
+}
+
+
+/* Keyframes for Container Fade-In */
+@keyframes containerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide in from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Order List Styles */
+.order-list {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #543d6b;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem auto;
+    max-width: 40rem;
+    opacity: 0; /* Start invisible */
+    animation: containerFadeIn 0.6s ease-out forwards; /* Apply container fade-in animation */
+}
+
+/* Keyframes for Fade-In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* List Item Styles */
+li {
+    border: 2px solid #ddd;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.5s ease-out forwards; /* Apply fade-in animation */
+}
+
+/* Animation Delay (if needed) */
+li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+/* Add more delays for additional items */
