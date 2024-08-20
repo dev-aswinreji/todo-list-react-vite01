@@ -1,33 +1,31 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
+function CreateTodo() {
+  const [tasks, setTasks] = useState([]);
 
-function CreateTodo(){
-    const [tasks,setTasks] = useState([])
+  const [text, setText] = useState("");
 
-    const [text,setText] = useState('')
-    
-    useEffect(()=>{
-        setTasks(text)
-    },[text])
+  function addTask(text) {
+    setTasks([...tasks, text]);
+    setText("");
+    console.log(text, "task is showing");
+  }
 
-    function SetText(textMsg){
-        setText(textMsg)
-        console.log(textMsg,'task is showing');
-    }
-
-
-
-    return (
-        <>
-        <div>
-            <input type="text" name="" id="" onChange={(e)=>SetText(e.target.value)}/>
-            <button> ADD</button>
-            <br />
-            {tasks}
-        </div>
-        </>
-    )
+  return (
+    <>
+      <div>
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button onClick={() => addTask(text)}> ADD</button>
+        <br />
+        <h1>
+            {tasks.map(item=><p key={item}>{item}</p>)}
+        </h1>
+      </div>
+    </>
+  );
 }
 
-
-export default CreateTodo
+export default CreateTodo;
