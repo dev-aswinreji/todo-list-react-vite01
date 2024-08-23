@@ -194,7 +194,7 @@ li:hover {
 }
 
 /* Text and Completion Styles */
-/* .todo-item p {
+.todo-item p {
     margin: 0;
     color: #333;
     flex: 1;
@@ -218,10 +218,10 @@ li:hover {
 
 .todo-item button:hover {
     background-color: #50a2a2;
-} */
+}
 
 /* Animation Delay */
-/* li:nth-child(1) {
+li:nth-child(1) {
     animation-delay: 0.1s;
 }
 li:nth-child(2) {
@@ -229,4 +229,4 @@ li:nth-child(2) {
 }
 li:nth-child(3) {
     animation-delay: 0.3s;
-} */
+}
