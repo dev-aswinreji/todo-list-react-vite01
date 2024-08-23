@@ -68,7 +68,6 @@ h1 {
 input {
     border-radius: 1.5rem;
     width: 100%;
-    max-width: 25rem;
     height: 3rem;
     padding: 0 1.5rem;
     font-weight: bold;
@@ -141,7 +140,6 @@ button:active {
     font-size: 1.6rem;
     font-weight: bold;
     width: 80%;
-    max-width: 60rem;
     color: #543d6b;
     display: flex;
     flex-direction: column;
@@ -166,12 +164,12 @@ button:active {
 li {
     width: 100%;
     border: 2px solid #ddd;
-    border-radius: 1.5rem;
+    /* border-radius: 1.5rem; */
     padding: 1rem 1.5rem;
     margin: 0.7rem 0;
     background-color: #c77a6d;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     opacity: 0;
     animation: fadeIn 0.5s ease-out forwards;
     transition: background-color 0.3s ease;
@@ -189,7 +187,9 @@ li:hover {
     padding: 0.8rem;
     flex: 1;
     display: flex;
+    max-width: 100%;
     align-items: center;
+    width: 90rem;
     justify-content: space-between;
 }
 
