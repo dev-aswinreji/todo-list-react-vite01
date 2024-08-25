@@ -6,13 +6,7 @@ function CreateTodo() {
   const [tasks, setTasks] = useState([]);
 
   const [text, setText] = useState("");
-
-    // useEffect(()=>{
-    //  if(!text.length){
-    //     alert('hello')
-    //  }  
-    // },[text])
-
+  
   function addTask(text) {
     if(text.length <=0){
         return alert('Invalid input')
@@ -31,16 +25,7 @@ function CreateTodo() {
     setTasks(tasks.filter(item=>item.id !== id))
   }
 
-//   function toggleCompleted(id){
-//     setTasks(tasks.map(item=>{
-//         if(item.id === id){
-//             return {...tasks,completed: !item.completed}
-//         }else {
-//             return item
-//         }
-//     }))
-//   }
- let newTasks = []
+let newTasks = []
  let count = 0
  for(let i = tasks.length -1; i>=0;i-- ){
     newTasks[count] = tasks[i]
